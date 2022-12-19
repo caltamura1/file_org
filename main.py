@@ -9,7 +9,7 @@ for file in files:
     ext = ext[1:]
 
     if os.path.exists(path + '/' + ext):
-        shutil.move(path+'/'+file, path + '/' + ext + '/' + file)
+        shutil.move(path + '/' + file, path + '/' + ext + '/' + file)
     else:
         os.makedirs(path + '/' + ext)
         shutil.move(path + '/' + file, path + '/' + ext)
