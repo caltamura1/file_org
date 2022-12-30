@@ -21,6 +21,10 @@ for file in files:
         shutil.move(path + '/' + file, path + '/' + ext)
 
 for file in files:
-    docs = ['exe','rar','mp3','jpeg','accdb','xlsx','pptx','png','app','docx','jpg','zip','dmg','pdf']
-    if file not in docs:
+    docs = ['exe','rar','mp3','jpeg', 'html','accdb','xlsx','pptx','png','app','docx','jpg','zip','dmg','pdf', 'webp']
+    name, ext = os.path.splitext(file)
+    ext = ext[1:]
+
+    if os.path.exists(path + "/" + file) and file not in docs and file != ".DS_Store" and file != "_OTHER":
+        print(file)
         shutil.move(path + "/" + file, folder)
